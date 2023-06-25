@@ -17,5 +17,6 @@ El scraping es una técnica utilizada para extraer información desde sitios web
 Para extraer datos de Facebook se utilizó la libreria **Facebook-scraper** con su metodo correspodiente para obtener los post de la web. En este trabajo se rescataron los datos desde el grupo 'Compra y Venta Santiago de Chile', de un total de 2400 páginas y 100 post por cada página. De cada post extraido se guarda su Id, fecha de publicación, número de comentarios y reacciones. En el siguiente cuadro resumen vemos los datos recolectados agrupados por mes en el que fueron publicados los post:  
 
 |**Mes**|**Nº de Posts**|**Comentarios**|**Reacciones**|
+|01-2023|300|10|100|
 
 
