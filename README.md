@@ -14,5 +14,8 @@ En este repositorio revisaremos a fondo el código ejecutado en el desarrollo de
 El scraping es una técnica utilizada para extraer información desde sitios web. En este caso se extraen datos desde Facebook, tomando el supuesto de que funciona como representación de la demanda y oferta de los pequeños negocios del pais. Esto dado que los emprendimientos suelen utilizar los medios digitales para encontrar clientes, y entre estos medios digitales encontramos las redes sociales y los grupos de Facebook.  
 
 (Agregar codigo de la libreria utilizada)  
-Para extraer datos de Facebook se utilizó la libreria **Facebook-scraper** con su metodo correspodiente para obtener los post de la web. En este trabajo se rescataron los datos desde el grupo 'Compra y Venta Santiago de Chile', de un total de 2400 páginas y 100 post por cada página.
+Para extraer datos de Facebook se utilizó la libreria **Facebook-scraper** con su metodo correspodiente para obtener los post de la web. En este trabajo se rescataron los datos desde el grupo 'Compra y Venta Santiago de Chile', de un total de 2400 páginas y 100 post por cada página. De cada post extraido se guarda su Id, fecha de publicación, número de comentarios y reacciones. En el siguiente cuadro resumen vemos los datos recolectados agrupados por mes en el que fueron publicados los post:  
+
+|**Mes**|**Nº de Posts**|**Comentarios**|**Reacciones**|
+
 
