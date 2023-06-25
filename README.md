@@ -18,6 +18,12 @@ Para extraer datos de Facebook se utilizó la libreria **Facebook-scraper** con 
 
 |**Mes**|**Nº de Posts**|**Comentarios**|**Reacciones**|
 |-------|---------------|---------------|--------------|
-|01-2023|300|10|100|
+|01-2023|300|10|100|  
+
+De ahora en adelante se consideran los terminos **Oferta** como en número de post y **Demanda** como la cantidad de comentarios + reacciones. En la siguiente sección se veremos si estos datos estan relacionados a la economía de Chile 🇨🇱.  
+
+## 2. Correlación Facebook - IAC
+
+
 
 
