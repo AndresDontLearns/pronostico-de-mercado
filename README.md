@@ -59,7 +59,31 @@ Para extraer datos de Facebook se utilizó la libreria **Facebook-scraper** con 
 De ahora en adelante se consideran los terminos **Oferta** como en número de post y **Demanda** como la cantidad de comentarios + reacciones. En la siguiente sección se veremos si estos datos estan relacionados a la economía de Chile 🇨🇱.  
 
 ## 2. Correlación Facebook - IAC
-Como apreciamos en la tabla anterior de los datos extraidos de Facebook, hay algunos meses que se aprecian con un número bajo de Posts, muy alejados del resto de los datos o simplemente que no aparecen post en esos meses. Por lo tanto, antes de realizar el análisis de correlación con el indicador economico se realiza un preprocesamiento en los datos, con el fin de obtener resultados más representativos.
+Como apreciamos en la tabla anterior de los datos extraidos de Facebook, hay algunos meses que se aprecian con un número bajo de Posts, muy alejados del resto de los datos o simplemente que no aparecen post en esos meses. Por lo tanto, antes de realizar el análisis de correlación con el indicador económico se realiza un preprocesamiento en los datos, con el fin de obtener resultados más representativos. Los datos pasan por el siguiente proceso:  
+1. Eliminar la los post con fecha 07-2020.
+2. Modelar los datos de 07 y 08 del 2022.
+3. Escalar los valores de la demanda y oferta.
+4. Crear la nueva variable de **equilibrio** y escalarla.
+
+Este proceso se realiza con el siguiente cuadro de código, y lo puedes encontrar en [scraper.ipynb](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/scraper.ipynb)
+```Python
+#Eliminar valor atípico
+pdata.drop(datetime(2020,7,1),inplace=True)
+
+#modelar datos vacios
+idx = pd.date_range(start=pdata.index.min(),end = pdata.index.max(),freq = 'MS')
+pdata = pdata.reindex(idx)
+pdata['demanda'].interpolate(method='cubic',inplace=True)
+pdata['oferta'].interpolate(method='cubic',inplace=True)
+
+#definir scaler y escalar demanda, oferta y equilibrio
+scaler = preprocessing.StandardScaler()
+pdata[['demanda','oferta']]= scaler.fit_transform(pdata[['demanda','oferta']])
+pdata['equi'] = pdata['demanda']/pdata['oferta']
+pdata[['equi']]= scaler.fit_transform(pdata[['equi']])
+```
+
+El escalado de los datos se realiza para obtener un análisis comprensible a simple vista, ya que al trabajar con numeros cercanos cercanos al rango entre 0 y 1 es más fácil comprender la correlación que existen entre las variables independientes (en este caso oferta, demanda y equilibrio) y las dependeintes (el indicador económico).
 
 
 
