@@ -85,7 +85,25 @@ pdata[['equi']]= scaler.fit_transform(pdata[['equi']])
 
 El escalado de los datos se realiza para obtener un análisis comprensible a simple vista, ya que al trabajar con números cercanos cercanos al rango entre 0 y 1 es más fácil comprender la correlación que existen entre las variables independientes (en este caso oferta, demanda y equilibrio) y las dependeintes (el indicador económico).  
 
-Para este proyecto se utilza el índice de actividad del comercio (IAC), calculado por el [Insituto Nacional de Estadística (INE)](https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-mensual-del-comercio). Estamos usando el archivo correspondiente a Mayo-2023, que cuenta con los datos hasta Abril del 2023. Este archivo es [base-de-datos-a-abril-csv-2023.csv](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/base-de-datos-a-abril-csv-2023.csv). Del reporte IAC solo consideramos las actividades relacionadas a el mercado al detalle, dado que para efectos del mercado de pequeños emprendimientos enos interesa el comportamiento del consumidor final.
+Para este proyecto se utilza el índice de actividad del comercio (IAC), calculado por el [Insituto Nacional de Estadística (INE)](https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-mensual-del-comercio). Estamos usando el archivo correspondiente a Mayo-2023, que cuenta con los datos hasta Abril del 2023. Este archivo es [base-de-datos-a-abril-csv-2023.csv](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/base-de-datos-a-abril-csv-2023.csv). Del reporte IAC solo consideramos las actividades relacionadas con el mercado al detalle, dado que para efectos de los pequeños emprendimientos nos interesa el comportamiento del consumidor final. Con los datos ya definidos se realiza un preprocesamiento similar al de los extrasidos desde Facebook:  
 
+1. Se iguala el formato de las fechas con el de las variables independientes.
+2. Se eliminan los datos que no corresponden con actividades al detalle.
+3. Se escalan los valores de los datos a analizar. 
 
+Ya con los datos preparados se realiza el análisis usando la función regresión lineal, de la libreria sklearn, para determinar los coeficientes de correlación de las variables y el valor de $r^2$ de los modelos aplicados a cada actividad económica estudiada. Los resultados son los siguientes
+
+|Clase |   coef_dem |   coef_ofe |   coef_equi |       r2 |
+|--------|-----------|-----------|------------|---------|
+|    4711 |  0.65 |  -0.37 |  -0.59  | 0.79 |
+|    4719 |  0.88  |  -0.78 |  -0.91  | 0.84 |
+|    4720 |  0.65  |  -0.42 |  -0.51  | 0.769 |
+|    4730 |  0.08 |  -0.44  |  -0.074 | 0.67 |
+|    4740 |  1.01   |  -0.68 |  -0.84  | 0.70 |
+|    4752 |  0.23  |  -0.11 |  -0.05 | 0.25 |
+|    4759 |  1.05   |  -0.872 |  -0.93  | 0.89  |
+|    4760 |  1.16   |  -0.66 |  -0.90  | 0.80 |
+|    4771 |  1.04   |  -0.73 |  -1.12   | 0.90 |
+|    4772 |  0.81  |  -0.43 |  -0.55  | 0.63 |
+|    4773 |  0.76  |  -0.65 |  -0.64   | 0.80 |
 
