@@ -59,13 +59,13 @@ Para extraer datos de Facebook se utilizó la libreria **Facebook-scraper** con 
 De ahora en adelante se consideran los terminos **Oferta** como en número de post y **Demanda** como la cantidad de comentarios + reacciones. En la siguiente sección se veremos si estos datos estan relacionados a la economía de Chile 🇨🇱.  
 
 ## 2. Correlación Facebook - IAC
-Como apreciamos en la tabla anterior de los datos extraidos de Facebook, hay algunos meses que se aprecian con un número bajo de Posts, muy alejados del resto de los datos o simplemente que no aparecen post en esos meses. Por lo tanto, antes de realizar el análisis de correlación con el indicador económico se realiza un preprocesamiento en los datos, con el fin de obtener resultados más representativos. Los datos pasan por el siguiente proceso:  
+Como apreciamos en la tabla anterior de los datos extraidos de Facebook, hay algunos meses que se aprecian con un número bajo de Posts, muy alejados del resto de los meses o simplemente que no aparecen post. Por lo tanto, antes de realizar el análisis de correlación con el indicador económico se realiza un preprocesamiento en los datos, con el fin de obtener resultados más representativos. Los datos pasan por el siguiente proceso:  
 1. Eliminar la los post con fecha 07-2020.
 2. Modelar los datos de 07 y 08 del 2022.
 3. Escalar los valores de la demanda y oferta.
 4. Crear la nueva variable de **equilibrio** y escalarla.
 
-Este proceso se realiza con el siguiente cuadro de código, y lo puedes encontrar en [regresion-lineal.ipynb]([https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/scraper.ipynb](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/regresion-lineal.ipynb)).
+Este proceso se realiza con el siguiente cuadro de código, y lo puedes encontrar en [regresion-lineal.ipynb](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/regresion-lineal.ipynb).
 ```Python
 #Eliminar valor atípico
 pdata.drop(datetime(2020,7,1),inplace=True)
@@ -97,13 +97,16 @@ Ya con los datos preparados se realiza el análisis usando la función regresió
 |--------|-----------|-----------|------------|---------|
 |    4711 |  0.65 |  -0.37 |  -0.59  | 0.79 |
 |    4719 |  0.88  |  -0.78 |  -0.91  | 0.84 |
-|    4720 |  0.65  |  -0.42 |  -0.51  | 0.769 |
+|    4720 |  0.65  |  -0.42 |  -0.51  | 0.76 |
 |    4730 |  0.08 |  -0.44  |  -0.07 | 0.67 |
 |    4740 |  1.01   |  -0.68 |  -0.84  | 0.70 |
 |    4752 |  0.23  |  -0.11 |  -0.05 | 0.25 |
-|    4759 |  1.05   |  -0.872 |  -0.93  | 0.89  |
+|    4759 |  1.05   |  -0.87 |  -0.93  | 0.89  |
 |    4760 |  1.16   |  -0.66 |  -0.90  | 0.80 |
 |    4771 |  1.04   |  -0.73 |  -1.12   | 0.90 |
 |    4772 |  0.81  |  -0.43 |  -0.55  | 0.63 |
-|    4773 |  0.76  |  -0.65 |  -0.64   | 0.80 |
+|    4773 |  0.76  |  -0.65 |  -0.64   | 0.80 |  
 
+De la tabla anterior se comprende que, cada clase corresponde a un modelo de regresión lineal aplicado a los datos de la actividad económica que representa. Las columnas de "coef_" determinan cuanto peso tiene la variable en la explicación del modelo, mientras más alejado de 0 sea este valor más será su importancia. En el caso del indicador $r^2$, muestra que tanto se ajusta el modelo a los datos que busca representar, siendo 0 nada y 1 perfectamente.  
+
+## 3. Forecast del mercado
