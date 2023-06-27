@@ -4,7 +4,7 @@ Proyecto de **Data Science** con el objetivo de pronosticar el estado del mercad
 La idea de este proyecto es recolectar las publicaciones y sus reacción en un grupo de Facebook, de esta manera se toma el numero de publicaciones como la oferta,aqw y la suma de reacciones sería la demanda en el mercado. Entre estos dos indicadores calculamos también el equilibrio de mercado $(\frac{Demanda}{Oferta})$. Así se se pronostica el estado del mercado en un futuro cercano en base a los datos de la series de oferta y demanda (Forecasting). Considerando lo anterior, este trabajo se divide en cuatro partes.
 
 1. [Recuperar la información desde algún grupo de Facebook representativo.](#1-scraping-de-facebook)
-2. [Contrastar los datos con algún indicador económico para definir si existe alguna correlación.](#2-correlación Facebook-IAC)
+2. [Contrastar los datos con algún indicador económico para definir si existe alguna correlación.](#2-correlación-facebook---iac)
 3. Realizar forecast de los datos de Facebook.
 4. Desarrollar un panel donde visualizar la información.
 
