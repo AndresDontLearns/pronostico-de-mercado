@@ -65,7 +65,7 @@ Como apreciamos en la tabla anterior de los datos extraidos de Facebook, hay alg
 3. Escalar los valores de la demanda y oferta.
 4. Crear la nueva variable de **equilibrio** y escalarla.
 
-Este proceso se realiza con el siguiente cuadro de código, y lo puedes encontrar en [scraper.ipynb](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/scraper.ipynb)
+Este proceso se realiza con el siguiente cuadro de código, y lo puedes encontrar en [regresion-lineal.ipynb]([https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/scraper.ipynb](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/regresion-lineal.ipynb)).
 ```Python
 #Eliminar valor atípico
 pdata.drop(datetime(2020,7,1),inplace=True)
@@ -81,9 +81,11 @@ scaler = preprocessing.StandardScaler()
 pdata[['demanda','oferta']]= scaler.fit_transform(pdata[['demanda','oferta']])
 pdata['equi'] = pdata['demanda']/pdata['oferta']
 pdata[['equi']]= scaler.fit_transform(pdata[['equi']])
-```
+```  
 
-El escalado de los datos se realiza para obtener un análisis comprensible a simple vista, ya que al trabajar con numeros cercanos cercanos al rango entre 0 y 1 es más fácil comprender la correlación que existen entre las variables independientes (en este caso oferta, demanda y equilibrio) y las dependeintes (el indicador económico).
+El escalado de los datos se realiza para obtener un análisis comprensible a simple vista, ya que al trabajar con números cercanos cercanos al rango entre 0 y 1 es más fácil comprender la correlación que existen entre las variables independientes (en este caso oferta, demanda y equilibrio) y las dependeintes (el indicador económico).  
+
+Para este proyecto se utilza el índice de actividad del comercio (IAC), calculado por el [Insituto Nacional de Estadística (INE)](https://www.ine.gob.cl/estadisticas/economia/comercio-servicios-y-turismo/actividad-mensual-del-comercio). Estamos usando el archivo correspondiente a Mayo-2023, que cuenta con los datos hasta Abril del 2023. Este archivo es [base-de-datos-a-abril-csv-2023.csv](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/base-de-datos-a-abril-csv-2023.csv). Del reporte IAC solo consideramos las actividades relacionadas a el mercado al detalle, dado que para efectos del mercado de pequeños emprendimientos enos interesa el comportamiento del consumidor final.
 
 
 
