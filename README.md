@@ -109,6 +109,9 @@ Ya con los datos preparados se realiza el análisis usando la función regresió
 
 De la tabla anterior se comprende que, cada clase corresponde a un modelo de regresión lineal aplicado a los datos de la actividad económica que representa. Las columnas de "coef_" determinan cuanto peso tiene la variable en la explicación del modelo, mientras más alejado de 0 sea este valor más será su importancia. En el caso del indicador $r^2$, muestra que tanto se ajusta el modelo a los datos que busca representar, siendo 0 nada y 1 perfectamente.  
 
-Del cuadro podemos inferir que la importancia de las variables independientes esta en el siguiente orden: **demanda**, **equilibrio** y **oferta**. Y el modelo que mejor se ajusta a los datos es el de la clase *4771*, que corresponde a "venta al por menor de prendas de vestir, calzado y artículos de cuero en comercios especializados". Si deseas saber la definición de las demás clases te invito a revisar le link del INE que deje más arriba.
+Del cuadro podemos inferir que la importancia de las variables independientes esta en el siguiente orden: **demanda**, **equilibrio** y **oferta**. Y el modelo que mejor se ajusta a los datos es el de la clase *4771*, que corresponde a "venta al por menor de prendas de vestir, calzado y artículos de cuero en comercios especializados". Si deseas saber la definición de las demás clases te invito a revisar le link del INE que deje más arriba.  
+
+Si bien los indicadores de correlación parecen altos y con ellos podriamos concluir que encontramos una directa relación entre las publicaciones del grupo de Facebook y la actividad comercial, la verdad es que la cantidad de datos que tenemos no es suficientemente representativa como para indicar si el modelo realmente puede predecir la actividad economica. Sin embargo, este aálisis se continuará realizando en los meses futuros con el fin de entregarles el prónostico a los emprendimientos que visiten [Pymetools](https://www.pymestools.com) y a medida que se acumulen los datos con el tiempo se podrá verificar si los indicadores actuales tenían peso realmente.
 
 ## 3. Forecast del mercado
+Este es el último paso 
