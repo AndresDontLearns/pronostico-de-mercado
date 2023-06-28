@@ -93,7 +93,7 @@ Para este proyecto se utilza el índice de actividad del comercio (IAC), calcula
 
 Ya con los datos preparados se realiza el análisis usando la función regresión lineal, de la libreria sklearn, para determinar los coeficientes de correlación de las variables y el valor de $r^2$ de los modelos aplicados a cada actividad económica estudiada. Los resultados son los siguientes
 
-|Clase |   coef_dem |   coef_ofe |   coef_equi |       r2 |
+|Clase |   coef_dem |   coef_ofe |   coef_equi |       $r^2$ |
 |--------|-----------|-----------|------------|---------|
 |    4711 |  0.65 |  -0.37 |  -0.59  | 0.79 |
 |    4719 |  0.88  |  -0.78 |  -0.91  | 0.84 |
@@ -108,5 +108,7 @@ Ya con los datos preparados se realiza el análisis usando la función regresió
 |    4773 |  0.76  |  -0.65 |  -0.64   | 0.80 |  
 
 De la tabla anterior se comprende que, cada clase corresponde a un modelo de regresión lineal aplicado a los datos de la actividad económica que representa. Las columnas de "coef_" determinan cuanto peso tiene la variable en la explicación del modelo, mientras más alejado de 0 sea este valor más será su importancia. En el caso del indicador $r^2$, muestra que tanto se ajusta el modelo a los datos que busca representar, siendo 0 nada y 1 perfectamente.  
+
+Del cuadro podemos inferir que la importancia de las variables independientes esta en el siguiente orden: **demanda**, **equilibrio** y **oferta**. Y el modelo que mejor se ajusta a los datos es el de la clase *4771*, que corresponde a "venta al por menor de prendas de vestir, calzado y artículos de cuero en comercios especializados". Si deseas saber la definición de las demás clases te invito a revisar le link del INE que deje más arriba.
 
 ## 3. Forecast del mercado
