@@ -5,7 +5,7 @@ La idea de este proyecto es recolectar las publicaciones y sus reacción en un g
 
 1. [Recuperar la información desde algún grupo de Facebook representativo.](#1-scraping-de-facebook)
 2. [Contrastar los datos con algún indicador económico para definir si existe alguna correlación.](#2-correlación-facebook---iac)
-3. Realizar forecast de los datos de Facebook.
+3. [Realizar forecast de los datos de Facebook.](#3-forecast-del-mercado)
 4. Desarrollar un panel donde visualizar la información.
 
 En este repositorio revisaremos a fondo el código ejecutado en el desarrollo del proyecto, además de los comentarios y conclusiones de los resultados obtenidos.  
@@ -122,3 +122,6 @@ Esta es la última parte que se realiza en Python, el pronóstico de las variabl
 
 
 
+
+
+## 4. Looker Studio
