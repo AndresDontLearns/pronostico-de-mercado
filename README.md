@@ -114,4 +114,11 @@ Del cuadro podemos inferir que la importancia de las variables independientes es
 Si bien los indicadores de correlación parecen altos y con ellos podriamos concluir que encontramos una directa relación entre las publicaciones del grupo de Facebook y la actividad comercial, la verdad es que la cantidad de datos que tenemos no es suficientemente representativa como para indicar si el modelo realmente puede predecir la actividad economica. Sin embargo, este aálisis se continuará realizando en los meses futuros con el fin de entregarles el prónostico a los emprendimientos que visiten [Pymetools](https://www.pymestools.com) y a medida que se acumulen los datos con el tiempo se podrá verificar si los indicadores actuales tenían peso realmente.
 
 ## 3. Forecast del mercado
-Este es el último paso 
+Esta es la última parte que se realiza en Python, el pronóstico de las variables de oferta, demanda y equilibrio del mercado según la actividad en el grupo de Facebook. Para lograrlo es necesario realizar un Forecasting sobre los datos de oferta y demanda, esto significa que se ajustarán modelos para predecir los datos de estas variables de forma autoregresiva, es decir, pronosticar datos futuros en base a sus datos pasados.  
+
+
+
+
+
+
+
