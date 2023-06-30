@@ -174,6 +174,6 @@ data_pred['equi']=data_pred['demanda']/data_pred['oferta']
 ```
 
 ## 4. Looker Studio
-
+<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/fcb4be67-10cf-43b3-96fe-671d0d945825/page/l18UD" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 ## Conclusiones
