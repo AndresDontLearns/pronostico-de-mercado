@@ -151,9 +151,9 @@ ax.set_title('Demanda')
 ax.legend()
 ```
 
-En el código anterior vemos la creación del modelo de Forecast y la predicción realizada, puedes ver este código completo en el archivo []()
+En el código anterior vemos la creación del modelo de Forecast y la predicción realizada, puedes ver este código completo en el archivo [forecast-ridge.ipynb](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/forecast-ridge.ipynb). En este modelo, a diferencia de la práctica usual, solo queda un dato para probar el modelo y no es representativo. Esto se debe a que es la información recolectada del mes en curso, por lo que no tiene el total de publicaciones del mes. Otro aspecto importante a destacar es el número de pasos que se pronostican, que es igual a los meses, actualmente está configurado a 2 meses en el futuro conssiderando el mes en curso y el siguiente. Finalmente, el último aspecto del modelo que me parece relevante destacar es que la demanda tiene un factor anti-ajuste mayor que la oferta dada su mayor disperción.  
 
-
+Ya realizadas las predicciones de los datos solo falta calcular la variable de **equilibrio**. Los datos resultantes los puedes encontrar en 
 
 
 
