@@ -153,8 +153,27 @@ ax.legend()
 
 En el código anterior vemos la creación del modelo de Forecast y la predicción realizada, puedes ver este código completo en el archivo [forecast-ridge.ipynb](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/forecast-ridge.ipynb). En este modelo, a diferencia de la práctica usual, solo queda un dato para probar el modelo y no es representativo. Esto se debe a que es la información recolectada del mes en curso, por lo que no tiene el total de publicaciones del mes. Otro aspecto importante a destacar es el número de pasos que se pronostican, que es igual a los meses, actualmente está configurado a 2 meses en el futuro conssiderando el mes en curso y el siguiente. Finalmente, el último aspecto del modelo que me parece relevante destacar es que la demanda tiene un factor anti-ajuste mayor que la oferta dada su mayor disperción.  
 
-Ya realizadas las predicciones de los datos solo falta calcular la variable de **equilibrio**. Los datos resultantes los puedes encontrar en 
+Ya realizadas las predicciones de los datos solo falta calcular la variable de **equilibrio**. Los datos resultantes los puedes encontrar en [good-data.csv](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/good-data.csv)  
 
+```python
+#Definir fechas que coinciden en la predicción y los datos originales
+index1 = pdata.index.values
+index2 = d_pred.index.values
+igual = [x for x in index1 if x in index2]
 
+#eliminar coincidencias de los datos originales
+data_pred = pdata.drop(igual)
+
+d_pred.rename('demanda',inplace=True)
+o_pred.rename('oferta', inplace=True)
+
+#Unir datos de predicción y concatenar en una tabla con los originales
+prediction = pd.merge(pd.DataFrame(d_pred),pd.DataFrame(o_pred),how='left',left_index=True,right_index=True)
+data_pred = pd.concat([data_pred,prediction])
+data_pred['equi']=data_pred['demanda']/data_pred['oferta']
+```
 
 ## 4. Looker Studio
+
+
+## Conclusiones
