@@ -116,9 +116,42 @@ Si bien los indicadores de correlación parecen altos y con ellos podriamos conc
 ## 3. Forecast del mercado
 Esta es la última parte que se realiza en Python, el pronóstico de las variables de oferta, demanda y equilibrio del mercado según la actividad en el grupo de Facebook. Para lograrlo es necesario realizar un Forecasting sobre los datos de oferta y demanda, esto significa que se ajustarán modelos para predecir los datos de estas variables de forma autoregresiva, es decir, pronosticar datos futuros en base a sus datos pasados.  
 
+Este modelo se construye con las libreria Skforecast, que funciona de la mano con la librería Sklearn. Para trabajar con los datos se realiza el mismo preprocesamiento mostrado anteriormente, y para predecir los valores se utiliza una función Ridge, que es una regresión lineal utilizada para evitar el sobreajuste de las variables en el modelo.  
 
+``` python
+#definir series de datos para el forecast, dejando el ultimo dato como evaluador
+d_train = pd.Series(pdata['demanda'])[:-1]
+o_train = pd.Series(pdata['oferta'])[:-1]
+d_test = pd.Series(pdata['demanda'])[-1:]
+o_test = pd.Series(pdata['oferta'])[-1:]
 
+#Definición de la función de predicción y ajuste para la demanda
+d_forecaster = ForecasterAutoreg(
+                regressor = Ridge(alpha= 4),
+                lags=8)
+d_forecaster.fit(y= pd.Series(d_train))
+print(d_forecaster.get_feature_importances())
 
+#Predicción de los dos pasos futuros de la demanda
+d_pred = d_forecaster.predict(steps=2)
+
+error_mse = mean_squared_error(
+                y_true = d_test,
+                y_pred = d_pred[:1]
+            )
+
+print(f"Error de test (mse): {error_mse}")
+
+#Graficar
+fig, ax = plt.subplots(figsize=(7, 2.5))
+d_train.plot(ax=ax, label='train')
+d_test.plot(ax=ax, label='test')
+d_pred.plot(ax=ax, label='predicciones')
+ax.set_title('Demanda')
+ax.legend()
+```
+
+En el código anterior vemos la creación del modelo de Forecast y la predicción realizada, puedes ver este código completo en el archivo []()
 
 
 
