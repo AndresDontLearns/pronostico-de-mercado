@@ -188,7 +188,14 @@ Este trabajo nació desde la idea de pronosticar si la demanda de pequeños empr
 
 Para lograrlo primero realizamos un Scraping de Facebook para extraer datos de las publicaciones presentes en un grupo de compra y venta. Si bien los datos extraidos no representan un periodo de tiempo lo suficientemente prolongado para realizar un Forecast concluyente, son suficientes para iniciar con el proyecto e ir complementando con el paso del tiempo.  
 
+Luego para comprobar si los datos tienen alguna relación con la economía se realizaron analisis de correlación sobre el índice de actividad economica de diferentes mercados al detalle. En varios de estos mercados se encontró una alta correlación con los datos, sin embargo se continuará analizando la correlación en el futuro dado los datos átipicos que se presentan en el conjunto de datos de Facebook.  
 
+Finalmente se realiza el Forecasting para predecir la demanda de los pequeños emprendimientos y se representa en un reporte de Looker Studio. La predicción, al igual que el resto de analisis, se ve afectada por la cantidad de datos recolectados y no permite realizar una validación efectiva de las predicciones que realiza el modelo.  
+
+Actualmente determinamos que puede existir alguna correlación entre la actividad de este grupo de Facebook y la demanda de Pymes. Pero aún quedan cosas por mejorar como:  
+
+1. Aumentar la cantidad de datos extraidos del grupo de Facebook, mes a mes.
+2. Validar las predicciones del modelo de Forecasting.
 
 
 
