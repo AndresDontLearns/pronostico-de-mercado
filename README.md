@@ -178,9 +178,14 @@ Finalmente, ya realizados todos los analisis sobre los datos se requiere de una 
 
 Para lograrlose subieron los datos a una hoja de Google y está se conectó a Looker Studio para generar el siguiente [reporte](https://lookerstudio.google.com/reporting/fcb4be67-10cf-43b3-96fe-671d0d945825):
 
-![Reporte](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/PronosticoMercado.PNG)(https://lookerstudio.google.com/reporting/fcb4be67-10cf-43b3-96fe-671d0d945825)
+![Reporte](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/PronosticoMercado.PNG)  
 
-
+Para acceder al reporte se requiere de internet, desde cualquier dispositivo. Y básicamente solo de eso, permitiendo conectarse desde un Smartphone, ordenador y/o tablet.
 
 
 ## Conclusiones
+
+
+
+
+
