@@ -184,6 +184,10 @@ Para acceder al reporte se requiere de internet, desde cualquier dispositivo. Y 
 
 
 ## Conclusiones
+Este trabajo nació desde la idea de pronosticar si la demanda de pequeños emprendimientos crecerá o no para el siguiente mes. Y una forma que creemos posible para medir esto es a travez del estado de las redes sociales, al ser el canal usual de las Pymes.  
+
+Para lograrlo primero realizamos un Scraping de Facebook para extraer datos de las publicaciones presentes en un grupo de compra y venta. Si bien los datos extraidos no representan un periodo de tiempo lo suficientemente prolongado para realizar un Forecast concluyente, son suficientes para iniciar con el proyecto e ir complementando con el paso del tiempo.  
+
 
 
 
