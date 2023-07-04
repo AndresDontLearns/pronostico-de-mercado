@@ -174,6 +174,11 @@ data_pred['equi']=data_pred['demanda']/data_pred['oferta']
 ```
 
 ## 4. Looker Studio
-<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/fcb4be67-10cf-43b3-96fe-671d0d945825/page/l18UD" frameborder="0" style="border:0" allowfullscreen></iframe>
+Finalmente, ya realizados todos los analisis sobre los datos se requiere de una bajada de información e interpretación para entregar valor al usuario final, que en este caso son las personas que toman decisiones para el crecimiento de pequeños emprendimientos, al analizar el comportamiento del mercado en los meses futuros.  
+
+Para lograrlose subieron los datos a una hoja de Google y está se conectó a Looker Studio para generar el siguiente [reporte]():
+
+![Reporte](https://github.com/AndresDontLearns/pronostico-de-mercado/blob/main/PronosticoMercado.PNG)
+
 
 ## Conclusiones
